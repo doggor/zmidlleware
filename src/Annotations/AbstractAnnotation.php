@@ -23,7 +23,7 @@ abstract class AbstractAnnotation
             $reader = new FileCacheReader(new AnnotationReader(), storage_path().'/annotation',true);
             $annotation = $reader->getMethodAnnotations($reflectionMethod);
             if (empty($annotation)){
-                throw new \RuntimeException('not need handle');
+                return [];
             }
             $annotation = $annotation[0];
             if ($annotation instanceof Middlewares){
